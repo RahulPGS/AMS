@@ -1,0 +1,52 @@
+{% extends 'admin-base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Select year</h1>
+    <select name="year" id="select_year">
+        <option value="puc-1">PUC-1</option>
+        <option value="puc-2">PUC-2</option>
+        <option value="engineering-1">Engineering-1</option>
+        <option value="engineering-2">Engineering-2</option>
+        <option value="engineering-3">Engineering-3</option>
+        <option value="engineering-4">Engineering-4</option>
+    </select>
+    <br>
+    <button onclick="filter()" class="btn btn-warning my-2">Filter</button>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive col-md-12">
+                <table class="table table-bordered table-hover modal_all" style="text-align: center;">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Faculty Name</th>
+                            <th scope="col">Student id</th>
+                            <th scope="col">Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for f in feedbacks %}
+                        <tr>
+                            <th scope="row">{{f.id}}</th>
+                            <td>{{f.faculty_name}}</td>
+                            <td>{{f.student.id}}</td>
+                            <td>{{f.feedback}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var year = document.getElementById("select_year")
+    year.value = "{{year}}"
+    function filter(){
+        var yearVal = year.value
+        window.location.href = '/feedbacks?year=' + yearVal
+    }
+</script>
+
+{% endblock %}

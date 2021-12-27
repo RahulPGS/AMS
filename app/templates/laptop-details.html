@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+                        <div class="card-body" style="background-color: #038cfc;">
+                        <span style="color: white;">Laptop Details</span>
+                    </div>
+                    </div>
+                    <div class="container mt-4 mb-4 p-1 d-flex justify-content center studentData">
+                        <div class="card col-md-12 p-4 c">
+                            <table class="table col-md-12">
+                                <thead class="thead-dark">
+                                    <p></p>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Id No </td>
+                                        <td>{{stu.id_no}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Student Name </td>
+                                        <td>{{stu.name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Laptop Campany </td>
+                                        <td>Acer</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Laptop Serial Number </td>
+                                        <td>{{lsn}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+ <div class="card">
+                        <div class="card-body" style="background-color: #038cfc;">
+                            <span style="color: white;">Student Profile</span>
+                            <button class="btn btn-success" style="float:right;"><span style="color: white; float: right;"><a href="/edit-profile">Edit</a></span></button>
+                        </div>
+                    </div>
+                    <div class="container profile">
+                        <div class="row">
+                            <div class="col-md-5 card">
+                                <div class=" image d-flex flex-column justify-content-center align-items-center mt-3">
+                                    <button class="btn btn-secondary">
+                                        <img src="https://st.depositphotos.com/2101611/4338/v/600/depositphotos_43381243-stock-illustration-male-avatar-profile-picture.jpg" height="100" width="100" />
+                                    </button>
+                                    <span class="name"><strong>{{stu.id_no}}</strong></span><span class="name mt-3"><strong>{{ stu.name }}</strong></span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6 class="mb-0" style="float:left;">Gender</h6><span class="col-sm-6 text-right" style="float: right;"><small class="">{{ stu.gender }}</small></span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h6 class="mb-0" style="float:left;">Date of Birth</h6><span class="col-sm-6 text-right" style="float: right;"><small class="">{{ stu.dob }}</small></span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h6 class="mb-0" style="float:left;">Category</h6><span class="col-sm-6 text-right" style="float: right;"><small class="">{{stu.category}}</small></span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h6 class="mb-0" style="float:left;">PH Category</h6><span class="col-sm-6 text-right" style="float: right;"><small class="">{{stu.ph_category}}</small></span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h6 class="mb-0" style="float:left;">Mobile Number</h6><span class="col-sm-6 text-right" style="float: right;"><small class="">{{stu.phone}}</small></span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h6 class="mb-0" style="float:left;">University Mail</h6><span class="col-sm-6 text-right"><small class="" style="float: right;">{{stu.id_no}}@rguktsklm.ac.in</small></span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h6 style="float:left;">Email</h6><span class="col-sm-6 text-right" style="float: right;"><small class="">{{stu.email}}</small></span></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-1"></div>
+                            <div class="col-md-5 card profile">
+                                <div class="card-header mt-2" style="background-color: #2e42c7;">
+                                    About Me
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+                                        <p class="text-muted" style="font-size: 12px;">
+                                            {{about.education}}
+<!--                                        Pursuing E1 in CSE from Rajiv Gandhi University of Knowledge Technologies-IIIT Srikakulam.-->
+                                        </p>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <strong><i class="fa fa-male margin-r-5"></i> Father Name</strong>
+                                        <p class="text-muted" style="font-size: 12px;">{{about.father_name}}</p>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
+                                        <p class="text-muted" style="font-size: 12px;">{{about.address}}</p>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <strong><i class="fa fa-map-marker margin-r-5"></i> Hostel Details : <p class="text-muted" style="font-size: 12px;">{{about.hostel}}</p></strong>
+
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <strong><i class="fa fa-map-marker margin-r-5"></i> Mess Details : <p class="text-muted" style="font-size: 12px;">{{about.mess}}</p></strong>
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <strong><i class="fa fa-map-marker margin-r-5"></i> Aadhaar UID : <p class="text-muted" style="font-size: 12px;">{{about.aadhaar}}</p></strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

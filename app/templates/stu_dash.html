@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+                    <div class="card header-footer">
+                        <div class="card-body " style="background-color: #038cfc;">
+                            <h4 style="color: white;">Academics Management System</h4>
+                        </div>
+                    </div>
+                    <section class="container mt-2 mb-2">
+                        <div class="container">
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <div class="widget-user-header bg-light-blue">
+                                        <div class="row valign-center">
+                                            <div class="col-md-12">
+                                                <div class="widget-user-image col-md-12 p-4" style="border: 3px solid #fcba03;;">
+                                                    <img class="img-circle" src="https://st.depositphotos.com/2101611/4338/v/600/depositphotos_43381243-stock-illustration-male-avatar-profile-picture.jpg" style="height:65px; border-radius: 50%;" alt="User Avatar">
+                                                    <span class="widget-user-username">{{name}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="container notice">
+                        <div class="main-body">
+                            <div class="row gutters-sm">
+                                <div class="col-md-12">
+                                    <h4 class="section-heading p-3" style="border-radius: 5px; background-color: #fcba03;">Notice Board</h4>
+                                    <div class="card mb-3">
+                                        {% for notif in notifications %}
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h6 class="mb-0">
+                                                        <a href="#" data-toggle="modal" data-target="#viewmodel">{{notif.title}}</a>
+                                                        <div class="modal fade top" id="viewmodel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+                                                            <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-body">
+                                                                        <div class="row d-flex justify-content-center align-items-center">
+                                                                            <img src="media/{{notif.media}}" height="500px" width="auto">
+                                                                            <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Close</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>`
+                                                        </div>
+                                                        {% if notif.link %}
+                                                        <br>
+                                                        <a href="{{notif.link}}">{{notif.link}}</a>
+                                                        {% endif %}
+                                                        <span class="col-sm-2 text-right" style="float: right;"><small class=""><i class="fa fa-clock-o"></i> {{notif.created_date}}</small></span>
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock %}

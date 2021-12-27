@@ -1,0 +1,12 @@
+{% extends 'admin-base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container">
+  <h1 class="mt-2">Post Notification</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+{% endblock %}
